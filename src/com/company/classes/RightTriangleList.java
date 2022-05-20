@@ -1,17 +1,20 @@
 package com.company.classes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class RightTriangleList implements Serializable {
-    private final List<RightTriangle> triangles;
+    private final ArrayList<RightTriangle> triangles;
 
     public RightTriangleList() {
         triangles = new ArrayList<>();
     }
 
-
+    public  ArrayList<RightTriangle> getList() {
+        return triangles;
+    }
     @Override
     public String toString() {
         return "Triangles " + triangles;

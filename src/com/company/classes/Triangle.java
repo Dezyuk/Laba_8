@@ -1,7 +1,11 @@
 package com.company.classes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Triangle implements Serializable {
     protected int side1;
     protected int side2;
@@ -12,6 +16,9 @@ public class Triangle implements Serializable {
         this.setSide1(side1);
         this.setSide2(side2);
         this.setSide3(side3);
+    }
+
+    public Triangle() {
     }
 
     public static boolean existsTriangle(int side1, int side2, int side3) {
